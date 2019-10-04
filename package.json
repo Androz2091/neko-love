@@ -1,0 +1,32 @@
+{
+  "name": "neko-love",
+  "version": "1.0.0",
+  "description": "A Neko Love API wrapper !",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Androz2091/neko-love.git"
+  },
+  "keywords": [
+    "neko",
+    "love",
+    "api",
+    "wrapper",
+    "endpoints",
+    "random",
+    "images",
+    "nsfw"
+  ],
+  "author": "Androz2091",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Androz2091/neko-love/issues"
+  },
+  "homepage": "https://github.com/Androz2091/neko-love#readme",
+  "dependencies": {
+    "wumpfetch": "^0.3.0"
+  }
+}
