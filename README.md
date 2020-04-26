@@ -4,7 +4,7 @@ This package is a wrapper to easly get images from neko-love.xyz!
 
 ## Installation
 
-```
+```sh
 npm install neko-love --save
 ```
 
@@ -25,26 +25,42 @@ client.cry().then((url) => {
 
 ## Endpoints
 
-### SFW
+### Random Images
 
-*   neko
-*   kitsune
-*   hug
-*   pat
-*   waifu
-*   cry
-*   kiss
+#### SFW
 
-### NSFW
+* neko
+* kitsune
+* pat
+* hug
+* waifu
+* cry
+* kiss
+* slap
+* smug
+* punch
 
-*   nekolewd
+#### NSFW
+
+* nekolewd
+
+### Image Effects
+
+* blurple
+* brightness
+* pixelate
+* gotham
+* invert
+* sepia
+* posterize
+* blur
 
 [Full Neko Love API documentation](https://docs.neko-love.xyz/)
 
 ## Links
 
-*   [Website](https://neko-love.xyz)
-*   [Documentation](https://docs.neko-love.xyz/)
-*   [Discord](https://discord.gg/byThR3v)
-*   [Github (source)](https://github.com/Androz2091/neko-love)
-*   [NPM](https://npmjs.com/neko-love)
+* [Website](https://neko-love.xyz)
+* [Documentation](https://docs.neko-love.xyz/)
+* [Discord](https://discord.gg/byThR3v)
+* [Github (source)](https://github.com/Androz2091/neko-love)
+* [NPM](https://npmjs.com/neko-love)
