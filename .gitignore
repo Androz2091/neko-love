@@ -56,3 +56,6 @@ jspm_packages/
 
 # Custom
 package-lock.json
+
+# Compiled files
+/lib
