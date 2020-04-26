@@ -2,9 +2,12 @@
   "name": "neko-love",
   "version": "1.0.1",
   "description": "A Neko Love API wrapper !",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "node src/index.js"
+    "test": "node lib/index.js",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,15 @@
   },
   "homepage": "https://github.com/Androz2091/neko-love#readme",
   "dependencies": {
-    "wumpfetch": "^0.3.0"
+    "node-fetch": "^2.6.0",
+    "query-string": "^6.12.1",
+    "wumpfetch": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "prettier": "^2.0.5",
+    "tslint": "^6.1.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
   }
 }
