@@ -21,6 +21,18 @@ client.kiss().then((url) => {
 client.cry().then((url) => {
     console.log(url); // https://neko-love.xyz/v1/cry/neko-love-cry_20.gif
 });
+
+// Some endpoints need an image URL as parameter
+client.blur("https://via.placeholder.com/150").then((url) => {
+    console.log(url); // https://neko-love.xyz/v2/blur/1587970389017-1587970389017.png
+});
+
+// You can also make the calls yourself
+client.get("blur", "v2", {
+    url: "https://via.placeholder.com/150"
+}).then((data) => {
+    console.log(data.url); // https://neko-love.xyz/v2/blur/1587970389017-1587970389017.png
+});
 ```
 
 ## Endpoints
