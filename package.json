@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "description": "A Neko Love API wrapper !",
   "main": "lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "test": "node lib/index.js",
     "build": "tsc",
