@@ -28,84 +28,85 @@ class NekoClient {
      * Neko endpoint
      */
     neko() {
-        return this._get('neko').then((body) => body.url);
+        return this.get('neko').then((body) => body.url);
     }
 
     /**
      * Nekolewd endpoint
      */
     nekolewd() {
-        return this._get('nekolewd').then((body) => body.url);
+        return this.get('nekolewd').then((body) => body.url);
     }
 
     /**
      * Kistune endpoint
      */
     kitsune() {
-        return this._get('kitsune').then((body) => body.url);
+        return this.get('kitsune').then((body) => body.url);
     }
 
     /**
      * Pat endpoint
      */
     pat() {
-        return this._get('pat').then((body) => body.url);
+        return this.get('pat').then((body) => body.url);
     }
 
     /**
      * Hug endpoint
      */
     hug() {
-        return this._get('hug').then((body) => body.url);
+        return this.get('hug').then((body) => body.url);
     }
 
     /**
      * Waifu endpoint
      */
     waifu() {
-        return this._get('waifu').then((body) => body.url);
+        return this.get('waifu').then((body) => body.url);
     }
 
     /**
      * Cry endpoint
      */
     cry() {
-        return this._get('cry').then((body) => body.url);
+        return this.get('cry').then((body) => body.url);
     }
 
     /**
      * Kiss endpoint
      */
     kiss() {
-        return this._get('kiss').then((body) => body.url);
+        return this.get('kiss').then((body) => body.url);
     }
 
     /**
      * Slap endpoint
      */
     slap() {
-        return this._get('slap').then((body) => body.url);
+        return this.get('slap').then((body) => body.url);
     }
 
     /**
      * Smug endpoint
      */
     smug() {
-        return this._get('smug').then((body) => body.url);
+        return this.get('smug').then((body) => body.url);
     }
 
     /**
      * Punch endpoint
      */
     punch() {
-        return this._get('punch').then((body) => body.url);
+        return this.get('punch').then((body) => body.url);
     }
 
     /**
      * Burple endpoint
      */
     blurple(url: string) {
-        return this._get('blurple', 'v2', {
+        if(!url) throw new Error(`url parameter is required for blurple endpoint.`);
+        return this.get('blurple', 'v2', {
             url
         }).then((body) => body.url);
     }
@@ -114,7 +115,8 @@ class NekoClient {
      * Brightness endpoint
      */
     brightness(url: string) {
-        return this._get('brightness', 'v2', {
+        if(!url) throw new Error(`url parameter is required for brightness endpoint.`);
+        return this.get('brightness', 'v2', {
             url
         }).then((body) => body.url);
     }
@@ -123,7 +125,8 @@ class NekoClient {
      * Pixelate endpoint
      */
     pixelate(url: string) {
-        return this._get('pixelate', 'v2', {
+        if(!url) throw new Error(`url parameter is required for pixelate endpoint.`);
+        return this.get('pixelate', 'v2', {
             url
         }).then((body) => body.url);
     }
@@ -132,7 +135,8 @@ class NekoClient {
      * Gotham endpoint
      */
     gotham(url: string) {
-        return this._get('gotham', 'v2', {
+        if(!url) throw new Error(`url parameter is required for gotham endpoint.`);
+        return this.get('gotham', 'v2', {
             url
         }).then((body) => body.url);
     }
@@ -141,7 +145,8 @@ class NekoClient {
      * Invert endpoint
      */
     invert(url: string) {
-        return this._get('invert', 'v2', {
+        if(!url) throw new Error(`url parameter is required for invert endpoint.`);
+        return this.get('invert', 'v2', {
             url
         }).then((body) => body.url);
     }
@@ -150,7 +155,8 @@ class NekoClient {
      * Sepia endpoint
      */
     sepia(url: string) {
-        return this._get('sepia', 'v2', {
+        if(!url) throw new Error(`url parameter is required for sepia endpoint.`);
+        return this.get('sepia', 'v2', {
             url
         }).then((body) => body.url);
     }
@@ -159,7 +165,8 @@ class NekoClient {
      * Posterize endpoint
      */
     posterize(url: string) {
-        return this._get('posterize', 'v2', {
+        if(!url) throw new Error(`url parameter is required for posterize endpoint.`);
+        return this.get('posterize', 'v2', {
             url
         }).then((body) => body.url);
     }
@@ -168,7 +175,8 @@ class NekoClient {
      * Blur endpoint
      */
     blur(url: string) {
-        return this._get('blur', 'v2', {
+        if(!url) throw new Error(`url parameter is required for blur endpoint.`);
+        return this.get('blur', 'v2', {
             url
         }).then((body) => body.url);
     }
@@ -176,15 +184,15 @@ class NekoClient {
     /**
      * Private method used to get endpoints with querys
      */
-    async _get(endpoint: string, version: string = 'v1', params?: object) {
+    async get(endpoint: string, version: string = 'v1', params?: object) {
         let fetchURL = `${this.baseURL}/${version}/${endpoint}`;
         if (params) {
             fetchURL += stringify(params);
         }
         const res = await fetch(fetchURL);
         if (res.status !== 200) throw res;
-        const data = await res.json();
-        return data as NekoResponse;
+        const data: NekoResponse = await res.json();
+        return data;
     }
 }
 
