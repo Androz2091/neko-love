@@ -1,6 +1,6 @@
 # Neko Love API
 
-This package is a wrapper to easly get images from neko-love.xyz!
+This package is an unofficial wrapper to easly get images from neko-love.xyz!
 
 ## Installation
 
